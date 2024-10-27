@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  # Service de l'API
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+      - "9090:9090"
+    depends_on:
+      - rabbitmq
+
+  # Service RabbitMQ
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"    # Port RabbitMQ
+      - "15672:15672"  # Interface d'administration RabbitMQ
+
+  # Service Prometheus
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  # Service Grafana
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"    # Interface Grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus

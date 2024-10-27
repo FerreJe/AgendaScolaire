@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'agenda-scolaire'
+    static_configs:
+      - targets: ['api:9090']

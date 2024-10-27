@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AgendaScolaire"
+version = "1.0.0"
+description = "Gestion d'un agenda scolaire avec système de notifications"
+readme = "README.md"
+authors = [
+    {name = "Jessica Ferreira P.", email = "jessica.ferreira5@edu.vs.ch"},
+]
+
+# Dépendances minimales nécessaires pour le projet
+dependencies = [
+    "fastapi==0.110.0",
+    "uvicorn==0.27.1",
+    "pydantic==2.6.1",
+    "python-multipart==0.0.9",
+    "pika==1.3.1",
+    "prometheus-client==0.19.0"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}

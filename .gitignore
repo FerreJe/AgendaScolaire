@@ -1,0 +1,16 @@
+# Python cache and egg-info directories
+__pycache__/
+*.egg-info/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.env/
+venv/
+
+# Ignorer les fichiers générés automatiquement
+src/__pycache__/
+src/AgendaScolaire.egg-info/
+
