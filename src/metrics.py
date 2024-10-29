@@ -1,5 +1,6 @@
 from prometheus_client import Counter
 
+
 # Compteur pour suivre le nombre de requêtes à l'API
 api_requests = Counter(
     'agenda_api_requests', 
@@ -18,5 +19,5 @@ notifications_sent = Counter(
 events_total = Counter(
     'agenda_events_total', 
     'Nombre total d\'événements',
-    ['type']  # private (agenda personnel) ou shared (agenda de classe)
+    ['type']  # private ou shared 
 )
