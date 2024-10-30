@@ -1,5 +1,5 @@
 # Image Python 
-FROM python:latest
+FROM python:3.12.7-bookworm
 
 # Définir le répertoire de travail
 WORKDIR /src

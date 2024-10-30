@@ -1,5 +1,6 @@
-from prometheus_client import Counter
+from prometheus_client import start_http_server, Counter
 
+start_http_server(8002)
 
 # Compteur pour suivre le nombre de requêtes à l'API
 api_requests = Counter(

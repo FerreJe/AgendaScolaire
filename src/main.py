@@ -20,12 +20,6 @@ notification_manager = NotificationManager()
 # ---- Configuration OAuth2 pour l'authentification ----
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
-# ---- Endpoint pour les métriques Prometheus ----
-@app.get("/metrics")
-async def metrics():
-    """Exporte les métriques pour Prometheus."""
-    return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
-
 def fake_hash_password(password: str):
     """Simulation du hachage de mot de passe"""
     return "fakehashed" + password

@@ -22,21 +22,11 @@ Un système d'agenda scolaire permettant aux enseignants de créer et gérer des
 
 ## Démarrage du système
 
-Vous aurez besoin de trois terminaux différents pour exécuter tous les composants du système.
+Vous aurez besoin d'un terminal pour exécuter les composants du système.
 
 ### Terminal 1 - Services Docker
 ```bash
-docker-compose up --build
-```
-
-### Terminal 2 - API FastAPI
-```bash
-fastapi dev src/main.py 
-```
-
-### Terminal 3 - Subscriber pour les notifications
-```bash
-python src/subscriber.py
+docker compose up --build
 ```
 
 Une fois tout démarré, vérifiez que :
@@ -47,11 +37,11 @@ Une fois tout démarré, vérifiez que :
 ## Utilisation de l'application
 
 ### 1. Accès aux services
-- API et Interface Swagger : http://localhost:8000/docs
+- API et Interface Swagger : http://localhost:8002/docs
 - RabbitMQ : http://localhost:15672 (guest/guest)
 - Grafana : http://localhost:3000 (admin/admin)
 - Prometheus : http://localhost:9090/targets
-- Metrics : http://localhost:8000/metrics
+- Metrics : http://localhost:8003/metrics
 
 ### 2. Connexion à l'application
 
@@ -77,7 +67,7 @@ L'application utilise trois niveaux de priorité pour les événements :
 ### Accéder à Swagger :
 Pour se connecter via l'interface Swagger :
 
-1. Ouvrez [http://localhost:8000/docs](http://localhost:8000/docs) dans votre navigateur.
+1. Ouvrez [http://localhost:8002/docs](http://localhost:8002/docs) dans votre navigateur.
 2. Utilisez le token en cliquant sur le bouton "Authorize" en haut de la page
 2. Saisir le username et password
 3. Cliquez Authorise
